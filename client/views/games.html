@@ -1,0 +1,22 @@
+<div ng-controller="GamerController" class="playlist-view" ng-init="getGames()">
+	<div class="container">
+		<div class="row">
+			<!--ng repeat to cycle over the data in the API-->
+			<div class="back-opacity">
+				<div class="animated fadeInUp card col-sm-4" ng-repeat="game in games | orderBy: Title">
+					<a href="{{game.site_detail_url}}" target="_blank">
+					<img src="{{game.image}}">
+
+					<div class="card-desc">
+						<h1 class="playlist-title">{{game.name}}</h1>
+						<p class="songs">{{game.platform}} songs</p>
+						<p class="description">{{game.number_of_user_reviews}}</p>
+						
+						<p class="username"><span style="color: #999999;">Playlist by </span>{{game.original_game_rating}}</p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
